@@ -17,8 +17,7 @@ The SHT30 shield for ESP8266 board Wemos D1 Mini has an Arduino driver but not a
 
 ###How to get the temperature and relative humidity:
 
-The `measure()` method returns a tuple with the temperature in celsius grades and the relative humidity in percentage. 
-If the measurement cannot be performed then an exception is raised (`SHT30Error`)
+The `measure()` method returns a tuple with the temperature in celsius grades and the relative humidity in percentage. If the measurement cannot be performed then an exception is raised (`SHT30Error`)
 
 ```python
 from sht30 import SHT30
@@ -30,13 +29,11 @@ temperature, humidity = sensor.measure()
 print('Temperature:', temperature, 'ºC, RH:', humidity, '%')
 ```
 
-There is another method, `measure_int()`, that returns 4 integer values, **no floating point operation is done**, designed 
-for environments that doesn't support floating point operations, the four values are: 
+There is another method, `measure_int()`, that returns 4 integer values, **no floating point operation is done**, designed for environments that doesn't support floating point operations, the four values are:
 
 Temperature (integer part), Temperature (decimal part), RH (integer part), RH (decimal part)
 
-For intance, if the `measure()` method returns `(21.5623, 32.0712)` the `measure_int()` method would return: `(24, 56, 32, 7)` The decimal 
-part is limited to 2 decimal digits.
+For intance, if the `measure()` method returns `(21.5623, 32.0712)` the `measure_int()` method would return: `(24, 56, 32, 7)` The decimal part is limited to 2 decimal digits.
 
 ```python
 t_int, t_dec, h_int, h_dec = sensor.measure_int()
