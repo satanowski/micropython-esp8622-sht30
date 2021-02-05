@@ -1,1 +1,0 @@
-from .sht30 import SHT30
